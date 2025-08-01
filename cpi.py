@@ -34,6 +34,11 @@ def compound_growth(
 
     return df
 
+def project_asset(df_a: pd.DataFrame, df_b: pd.DataFrame):
+    df = deepcopy(df_a)
+    df['Asset Value'] -= df_b["Asset Value"]
+    return df
+
 
 def plot(df_list: list[pd.DataFrame]) -> None:
     plt.figure(figsize=(12, 6))
